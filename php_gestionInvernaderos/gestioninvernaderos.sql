@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2024 a las 10:38:49
+-- Tiempo de generación: 07-11-2024 a las 14:31:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -72,6 +72,25 @@ CREATE TABLE `invernadero` (
   `idUsuario` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `invernadero`
+--
+
+INSERT INTO `invernadero` (`id_Invernadero`, `ubicacionInvernadero`, `idUsuario`) VALUES
+(1, 'Vicar', 1),
+(2, 'El Ejido', 2),
+(3, 'La Mojonera', 1),
+(4, 'El Ejido', 4),
+(5, 'La Mojonera', 2),
+(6, 'Nijar', 3),
+(7, 'La Mojonera', 3),
+(8, 'Roquetas de Mar', 4),
+(9, 'Vicar', 4),
+(10, 'Vicar', 3),
+(11, 'Nijar', 2),
+(12, 'El Ejido', 2),
+(13, 'Nijar', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -94,9 +113,29 @@ CREATE TABLE `lecturas` (
 
 CREATE TABLE `sensores` (
   `idSensor` int(5) NOT NULL,
-  `tipo_sensor` varchar(30) NOT NULL,
-  `ubicacion_sensor` varchar(50) NOT NULL,
-  `id_Invernadero` int(5) NOT NULL
+  `tipo_sensor` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `sensores`
+--
+
+INSERT INTO `sensores` (`idSensor`, `tipo_sensor`) VALUES
+(1, 'Temperatura'),
+(2, 'Humedad'),
+(3, 'Nivel CO2'),
+(4, 'Luminosidad');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sensores_inver`
+--
+
+CREATE TABLE `sensores_inver` (
+  `id_Invernadero` int(5) NOT NULL,
+  `idSensor` int(5) NOT NULL,
+  `Ubicacion` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -108,10 +147,21 @@ CREATE TABLE `sensores` (
 CREATE TABLE `usuarios` (
   `idUsuario` int(5) NOT NULL,
   `nombreUsuario` varchar(30) NOT NULL,
+  `apellidoUsuario` varchar(50) NOT NULL,
   `emailUsuario` varchar(20) NOT NULL,
   `passwordUsuario` varchar(25) NOT NULL,
   `telefonoUsuario` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`idUsuario`, `nombreUsuario`, `apellidoUsuario`, `emailUsuario`, `passwordUsuario`, `telefonoUsuario`) VALUES
+(1, 'Diego', 'Blanque Saavedra', 'diegoblanque1@gmail.', 'admin.diego.1', 659102394),
+(2, 'Fineas ', 'Havran', 'fineashavran@gmail.c', 'admin.fineas.2', 691206841),
+(3, 'Jose', 'Checa', 'josecheca@outlook.co', 'admin.jose.3', 691029430),
+(4, 'Abde', 'Afendi', 'abdeafendi@hotmail.c', 'admin.abde.4', 699102227);
 
 --
 -- Índices para tablas volcadas
