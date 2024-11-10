@@ -12,12 +12,12 @@
 
     <div>
         <a href="./sensores_invernadero.php">Consultar Sensores en invernadero</a>
-        <a href="#">Consultar Dueños de cada invernadero</a>
-        <a href="#">Consultar Historial de control</a>
-        <a href="#">Consultar Alertas</a>
+        <a href="./usuariosInvernadero.php">Consultar Dueños de cada invernadero</a>
+        <a href="./historialControl.php">Consultar Historial de control</a>
+        <a href="./alertas.php">Consultar Alertas</a>
         <!--<a href="#">Consultar Lecturas de sensores</a>-->
-        <a href="#">Gestionar Usuarios</a>
-        <a href="#">Gestionar Invernaderos</a>
+        <a href="./gestionUsuario.php">Gestionar Usuarios</a>
+        <a href="./gestionInvernaderos.php">Gestionar Invernaderos</a>
     </div>
     
     
