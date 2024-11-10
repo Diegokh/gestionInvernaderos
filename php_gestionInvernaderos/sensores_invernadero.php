@@ -5,14 +5,13 @@ $user = "root";
 $pass = "";
 $base = "gestioninvernaderos";
 
-
 $dwes = mysqli_connect($server, $user, $pass, $base);
 
-$query = "SELECT i.id_Invernadero, s.idSensor, s.Ubicacion 
-          FROM sensores_inver s 
-          JOIN invernadero i ON s.id_Invernadero = i.id_Invernadero";
+$query = "SELECT i.id_Invernadero, i.ubicacionInvernadero, s.idSensor, s.tipo_sensor
+    FROM invernadero i
+    INNER JOIN sensores_inver si ON i.id_Invernadero = si.id_Invernadero
+    INNER JOIN sensores s ON si.idSensor = s.idSensor;";
 $result = mysqli_query($dwes, $query);
-
 
 ?>
 
@@ -31,23 +30,23 @@ $result = mysqli_query($dwes, $query);
         <th>ID Invernadero:</th>
         <th>ID Sensor:</th>
         <th>Ubicacion:</th>
+        <th>Tipo Sensor:</th>
     </tr>
     <?php
-        if ($consulta && mysqli_num_rows($consulta) > 0) {
-            while ($row = mysqli_fetch_assoc($consulta)) {
+        if ($result && mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>
                         <td>{$row['id_Invernadero']}</td>
                         <td>{$row['idSensor']}</td>
-                        <td>{$row['Ubicacion']}</td>
+                        <td>{$row['ubicacionInvernadero']}</td>
+                        <td>{$row['tipo_sensor']}</td>
                       </tr>";
             }
         } else {
-            echo "<tr><td colspan='3'>No se han encontrado sensores en invernaderos</td></tr>";
+            echo "<tr><td colspan='4'>No se han encontrado sensores en invernaderos</td></tr>";
         }
         mysqli_close($dwes);
         ?>
-
-
     </table>
 </body>
 </html>
