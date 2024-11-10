@@ -21,49 +21,57 @@ $query = "SELECT
         historial_control h
     JOIN 
         dispositivos_control d ON h.id_Dispositivo = d.id_Dispositivo;
-
 ";
 $result = mysqli_query($dwes, $query);
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Historial de Control de Dispositivos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 </head>
 <body>
-    <h1>Historial de Control de Dispositivos</h1>
+    <div class="container mt-5">
+        <h1 class="mb-4">Historial de Control de Dispositivos</h1>
 
-    <table border="1">
-        <tr>
-            <th>ID Historial</th>
-            <th>Acción</th>
-            <th>Fecha</th>
-            <th>Hora</th>
-            <th>Tipo de Dispositivo</th>
-            <th>Estado del Dispositivo</th>
-        </tr>
-        <?php
-        if ($result && mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>
-                        <td>{$row['idHistorial']}</td>
-                        <td>{$row['accionHistorial']}</td>
-                        <td>{$row['fechaHistorial']}</td>
-                        <td>{$row['horaHistorial']}</td>
-                        <td>{$row['tipo_Dispositivo']}</td>
-                        <td>{$row['estado_Dispositivo']}</td>
-                      </tr>";
-            }
-        } else {
-            echo "<tr><td colspan='6'>No se ha encontrado historial de control</td></tr>";
-        }
-        // Cerrar la conexión con la base de datos
-        mysqli_close($dwes);
-        ?>
-    </table>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID Historial</th>
+                    <th>Acción</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Tipo de Dispositivo</th>
+                    <th>Estado del Dispositivo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>
+                                <td>{$row['idHistorial']}</td>
+                                <td>{$row['accionHistorial']}</td>
+                                <td>{$row['fechaHistorial']}</td>
+                                <td>{$row['horaHistorial']}</td>
+                                <td>{$row['tipo_Dispositivo']}</td>
+                                <td>{$row['estado_Dispositivo']}</td>
+                              </tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='6'>No se ha encontrado historial de control</td></tr>";
+                }
+                mysqli_close($dwes);
+                ?>
+            </tbody>
+        </table>
+        <a href="agrosmart.php" class="btn btn-primary mt-4">Volver al Menú de Inicio</a> </div>
+
+    </div>
 </body>
 </html>
