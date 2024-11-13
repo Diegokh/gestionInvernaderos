@@ -7,6 +7,15 @@ $base = "gestioninvernaderos";
 
 $dwes = mysqli_connect($server, $user, $pass, $base);
 
+// Eliminar historial
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
+    $idUsuario = $_POST['idHistorial'];
+    $deleteQuery = "DELETE FROM historial_control WHERE idHistorial = $idHistorial";
+    mysqli_query($dwes, $deleteQuery);
+   header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
+}
+
 $query = "SELECT 
     h.idHistorial, 
     h.accionHistorial, 
@@ -48,6 +57,7 @@ $result = mysqli_query($dwes, $query);
                     <th>Hora</th>
                     <th>Tipo de Dispositivo</th>
                     <th>Estado del Dispositivo</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -61,6 +71,12 @@ $result = mysqli_query($dwes, $query);
                                 <td>{$row['horaHistorial']}</td>
                                 <td>{$row['tipo_Dispositivo']}</td>
                                 <td>{$row['estado_Dispositivo']}</td>
+                                <td>
+                                    <form method='POST' style='display:inline-block;'>
+                                        <input type='hidden' name='idHistorial'>
+                                        <input type='submit' name='delete' value='Eliminar' class='btn btn-danger'>
+                                    </form>
+                                </td>
                               </tr>";
                     }
                 } else {
