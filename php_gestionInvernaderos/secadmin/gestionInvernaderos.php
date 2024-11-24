@@ -71,7 +71,7 @@ $result = mysqli_query($dwes, $query);
                                     </form>
                                 </td>
                                 <td>
-                                    <form method='get' action='editarInvernadero.php' style='display:inline-block;'>
+                                    <form method='get' action='../secadmin/editarInvernadero.php' style='display:inline-block;'>
                                         <input type='hidden' name='id_Invernadero' value='{$row['id_Invernadero']}'>
                                         <input type='submit' value='Editar' class='btn btn-primary'>
                                     </form>
@@ -99,7 +99,7 @@ $result = mysqli_query($dwes, $query);
             </div>
             <button type="submit" name="add" class="btn btn-success">Agregar Invernadero</button>
         </form>
-        <a href="agrosmart.php" class="btn btn-primary mt-4">Volver al Menú de Inicio</a> </div>
+        <a href="../agrosmart.php" class="btn btn-primary mt-4">Volver al Menú de Inicio</a> </div>
 
     </div>
 </body>

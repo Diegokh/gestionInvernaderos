@@ -80,7 +80,7 @@ $result = mysqli_query($dwes, $query);
                                     </form>
                                 </td>
                                 <td>
-                                    <form method='get' action='editarUsuario.php' style='display:inline-block;'>
+                                    <form method='get' action='../secadmin/editarUsuario.php' style='display:inline-block;'>
                                         <input type='hidden' name='idUsuario' value='{$row['idUsuario']}'>
                                         <input type='submit' value='Editar' class='btn btn-primary'>
                                     </form>
@@ -120,7 +120,7 @@ $result = mysqli_query($dwes, $query);
             </div>
             <button type="submit" name="add" class="btn btn-success">Agregar Usuario</button>
         </form>
-        <a href="agrosmart.php" class="btn btn-primary mt-4">Volver al Menú de Inicio</a> </div>
+        <a href="../agrosmart.php" class="btn btn-primary mt-4">Volver al Menú de Inicio</a> </div>
 
     </div>
 </body>

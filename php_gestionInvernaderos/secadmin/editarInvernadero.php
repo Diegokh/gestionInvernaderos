@@ -52,7 +52,7 @@ if (isset($_POST['editar_invernadero'])) {
             </div>
             <button type="submit" name="editar_invernadero" class="btn btn-primary">Guardar Cambios</button>
         </form>
-        <a href="agrosmart.php" class="btn btn-primary mt-4">Volver al Menú de Inicio</a> </div>
+        <a href="../agrosmart.php" class="btn btn-primary mt-4">Volver al Menú de Inicio</a> </div>
 
     </div>
 

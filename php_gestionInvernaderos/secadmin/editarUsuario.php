@@ -67,7 +67,7 @@ if (isset($_POST['edit_user'])) {
             </div>
             <button type="submit" name="edit_user" class="btn btn-primary">Guardar Cambios</button>
         </form>
-        <a href="agrosmart.php" class="btn btn-primary mt-4">Volver al Menú de Inicio</a> </div>
+        <a href="../agrosmart.php" class="btn btn-primary mt-4">Volver al Menú de Inicio</a> </div>
 
     </div>
 </body>

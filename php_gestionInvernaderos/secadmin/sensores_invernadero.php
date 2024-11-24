@@ -54,7 +54,7 @@ $result = mysqli_query($dwes, $query);
                 ?>
             </tbody>
         </table>
-        <a href="agrosmart.php" class="btn btn-primary mt-4">Volver al Menú de Inicio</a> </div>
+        <a href="../agrosmart.php" class="btn btn-primary mt-4">Volver al Menú de Inicio</a> </div>
 
     </div>
 </body>

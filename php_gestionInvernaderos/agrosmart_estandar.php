@@ -20,8 +20,9 @@
             max-height: 100%;
         }
 
-        footer{
-            align-items: center;
+        p{
+            text-align: center;
+            margin-top: 5.5rem;
         }
     </style>
 </head>
