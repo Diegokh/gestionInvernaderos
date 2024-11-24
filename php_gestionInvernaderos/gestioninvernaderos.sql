@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-11-2024 a las 14:05:50
+-- Tiempo de generación: 23-11-2024 a las 18:19:30
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -127,7 +127,7 @@ INSERT INTO `invernadero` (`id_Invernadero`, `ubicacionInvernadero`, `idUsuario`
 (2, 'El Ejido', 2),
 (3, 'La Mojonera', 1),
 (4, 'El Ejido', 4),
-(5, 'La Mojonera', 2),
+(5, 'La Mojonera', 3),
 (6, 'Nijar', 3),
 (7, 'La Mojonera', 3),
 (8, 'Roquetas de Mar', 4),
@@ -241,18 +241,20 @@ CREATE TABLE `usuarios` (
   `apellidoUsuario` varchar(50) NOT NULL,
   `emailUsuario` varchar(50) NOT NULL,
   `passwordUsuario` varchar(50) NOT NULL,
-  `telefonoUsuario` int(11) NOT NULL
+  `telefonoUsuario` int(11) NOT NULL,
+  `rolUsuario` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`idUsuario`, `nombreUsuario`, `apellidoUsuario`, `emailUsuario`, `passwordUsuario`, `telefonoUsuario`) VALUES
-(1, 'Diego', 'Blanque Saavedra', 'diegoblanque1@gmail.com', 'admin.diego.1', 659102394),
-(2, 'Fineas', 'Havran', 'fineashavran@gmail.com', 'admin.fineas.2', 691206841),
-(3, 'Jose', 'Checa', 'josecheca@outlook.com', 'admin.jose.3', 691029430),
-(4, 'Abde', 'Afendi', 'abdeafendi@hotmail.com', 'admin.abde.4', 699102227);
+INSERT INTO `usuarios` (`idUsuario`, `nombreUsuario`, `apellidoUsuario`, `emailUsuario`, `passwordUsuario`, `telefonoUsuario`, `rolUsuario`) VALUES
+(1, 'Diego', 'Blanque Saavedra', 'diegoblanque1@gmail.com', 'admin.diego.1', 659102394, 'Estandar'),
+(2, 'Fineas', 'Havran', 'fineashavran@gmail.com', 'admin.fineas.2', 691206841, 'Estandar'),
+(3, 'Jose', 'Checa', 'josecheca@outlook.com', 'admin.jose.3', 691029430, 'Estandar'),
+(4, 'Abde', 'Afendi', 'abdeafendi@hotmail.com', 'admin.abde.4', 699102228, 'Estandar'),
+(100, 'administrador', 'admin', 'administracion@agrosmart.com', 'admin.admin', 640318700, 'Administrador');
 
 --
 -- Índices para tablas volcadas
@@ -346,7 +348,7 @@ ALTER TABLE `historial_control`
 -- AUTO_INCREMENT de la tabla `invernadero`
 --
 ALTER TABLE `invernadero`
-  MODIFY `id_Invernadero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_Invernadero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `lecturas`
@@ -370,7 +372,7 @@ ALTER TABLE `sensores`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- Restricciones para tablas volcadas

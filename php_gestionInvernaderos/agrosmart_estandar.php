@@ -19,6 +19,10 @@
             max-width: 100%;
             max-height: 100%;
         }
+
+        footer{
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -30,13 +34,10 @@
 
     <div class="container mt-4">
         <div class="list-group">
-            <a href="./sensores_invernadero.php" class="list-group-item list-group-item-action">Consultar Sensores en invernadero</a>
-            <a href="./usuariosInvernadero.php" class="list-group-item list-group-item-action">Consultar Dueños de cada invernadero</a>
-            <a href="./historialControl.php" class="list-group-item list-group-item-action">Consultar Historial de control</a>
-            <a href="./alertas.php" class="list-group-item list-group-item-action">Consultar Alertas</a>
+            <a href="./secestandar/sensores_invernadero.php" class="list-group-item list-group-item-action">Consultar Sensores en invernadero</a>
+            <a href="./secestandar/historialControl.php" class="list-group-item list-group-item-action">Consultar Historial de control</a>
+            <a href="./secestandar/alertas.php" class="list-group-item list-group-item-action">Consultar Alertas</a>
             <!--<a href="#">Consultar Lecturas de sensores</a>-->
-            <a href="./gestionUsuario.php" class="list-group-item list-group-item-action">Gestionar Usuarios</a>
-            <a href="./gestionInvernaderos.php" class="list-group-item list-group-item-action">Gestionar Invernaderos</a>
         </div>
     </div>
 
