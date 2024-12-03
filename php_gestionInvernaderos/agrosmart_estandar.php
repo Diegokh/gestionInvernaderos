@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+
+$server = "localhost:3306";
+$user = "root";
+$pass = "";
+$base = "gestioninvernaderos";
+
+$conn = mysqli_connect($server, $user, $pass, $base);
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,6 +48,8 @@
 <body>
     <header class="container">
         <h1>AgroSmart</h1>
+        <h2>Bienvenido <?php echo ($_SESSION['nombreUsuario']) ?></h2>
+
     </header>
 
     <div class="container mt-4">
@@ -43,7 +62,7 @@
     </div>
 
     <div class="img-container">
-        <img class="img" src="/img/logo.png" alt="Logo de AgroSmart">
+        <img class="img" src="./img/logo.png" alt="Logo de AgroSmart">
     </div>
 
 </body>
