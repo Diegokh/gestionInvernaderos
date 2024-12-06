@@ -47,6 +47,7 @@ $conn = mysqli_connect($server, $user, $pass, $base);
     <header class="container">
         <h1>AgroSmart</h1>
         <h2>Bienvenido <?php echo ($_SESSION['nombreUsuario']) ?></h2>
+        <a   href="/logout/logout.php" class="btn btn-danger">Cerrar Sesión</a>
     </header>
 
     <div class="container mt-4">
